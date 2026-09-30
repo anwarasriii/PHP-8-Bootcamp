@@ -10,7 +10,7 @@ function normalizeUri(string $uri): string {
 }
 
 function getFilePath(string $uri, string $method): string{
-    
+    return ROUTES_DIR . '/' . normalizeUri($uri) . '_' . strtolower($method) .'.php';
 }
 
 function notFound() {
@@ -29,6 +29,14 @@ function dispatch(string $uri, string $method): void {
         notFound();
     }
     // 3) file path - php file path
+    $filePath = getFilePath($uri, $method);
+
+    if(file_exists($filePath)) {
+        include($filePath);
+        return;
+    }
+
+    notFound();
     // 4) If this file exists, if not 404
     // 5) Handle the route by including the PHP file
 }
