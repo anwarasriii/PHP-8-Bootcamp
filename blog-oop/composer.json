@@ -1,0 +1,16 @@
+{
+    "name": "muhda/blog-oop",
+    "authors": [
+        {
+            "name": "Anwar Asri",
+            "email": "muhdanwar209@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "require": {}
+}
