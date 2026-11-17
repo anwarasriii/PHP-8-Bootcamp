@@ -1,9 +1,9 @@
 {
-    "name": "muhda/blog-oop",
+    "name": "piotrjura/blog-oop",
     "authors": [
         {
-            "name": "Anwar Asri",
-            "email": "muhdanwar209@gmail.com"
+            "name": "Piotr Jura",
+            "email": "jura.piotrek@gmail.com"
         }
     ],
     "autoload": {
@@ -12,5 +12,9 @@
             "Core\\": "core/"
         }
     },
-    "require": {}
+    "require": {},
+    "scripts": {
+        "schema:load": "php bin/schema_load.php",
+        "schema:fixtures": "php bin/schema_fixtures.php"
+    }
 }

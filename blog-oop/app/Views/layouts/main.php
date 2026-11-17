@@ -15,6 +15,14 @@
   <nav>
     <a href="/">Home</a>
     <a href="/posts">Posts</a>
+    <?php if ($user): ?>
+      <form action="/logout" method="POST">
+        <?= csrf_token() ?>
+        <button>Logout (<?= $user->email ?>)</button>
+      </form>
+    <?php else: ?>
+      <a href="/login">Login</a>
+    <?php endif; ?>
   </nav>
   <main>
     <?= $content ?>
